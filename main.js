@@ -139,13 +139,13 @@ function addBg(id){
 }
 
 document.getElementById('show-donation').addEventListener('click', function(e){
-    
+   e.preventDefault(); 
     showdonation('all-donation');
     addBg('show-history');
     
 });
 document.getElementById('show-history').addEventListener('click', function(e){
-    
+    e.preventDefault();
     showdonation('histroy-section');
     
     addBg('show-donation');
@@ -154,10 +154,22 @@ document.getElementById('show-history').addEventListener('click', function(e){
 // Toggle home page to blog page
 document.getElementById('blog').addEventListener('click', function (e) {
     e.preventDefault();
-    window.location.href = '/blog.html';    
+    window.location.href = 'blog.html';
 });
 document.getElementById('home').addEventListener('click', function (e) {
     e.preventDefault();
-    window.location.href = '/index.html';    
+    window.location.href = 'index.html';   
+   
+     
 });
+
+// function blog(event) {
+//     event.preventDefault();
+//     window.location.href = 'blog.html';    
+// };
+
+// function home(event) {
+//     event.preventDefault();
+//     window.location.href = 'index.html';    
+// };
 
