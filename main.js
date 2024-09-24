@@ -1,4 +1,8 @@
 
+
+
+
+
 // Common Function
 function validInput(id) {
     const validDonateInput = document.getElementById(id).value;
@@ -15,6 +19,7 @@ function validInput(id) {
 
 
 
+
 let successfullPopUp = document.getElementById("my_modal_4");
 let unSuccessfullPopUp = document.getElementById("my_modal_2");
 
@@ -22,7 +27,6 @@ let unSuccessfullPopUp = document.getElementById("my_modal_2");
 
 document.getElementById('noakhali-donate').addEventListener('click', function (e) {
     e.preventDefault();
- 
     let totalBalance = document.getElementById('total-balance').innerText;
     const noakhaliTotalBalance = parseFloat(document.getElementById('noakhali-total-balance').innerText);
     const noakhaliDonateBalance = validInput('noakhali-donate-balance');
@@ -34,8 +38,21 @@ document.getElementById('noakhali-donate').addEventListener('click', function (e
         const noakhaliNewTotalBalance = noakhaliTotalBalance + noakhaliDonateBalance;
         document.getElementById('noakhali-total-balance').innerHTML = noakhaliNewTotalBalance;
         document.getElementById('total-balance').innerHTML = newTotalBalance;
-
         successfullPopUp.showModal();
+
+        // added Donation in Histroy
+        const date = new Date();
+        const cerrentDate = date.textContent = date.toString();
+
+        const div = document.createElement('div');
+        div.classList.add('border', 'p-8','mt-6');
+        div.innerHTML =`
+            <p>${noakhaliDonateBalance} Taka Donate for Flood at Noakhali, Bangladesh</p>
+            <p>${cerrentDate}</p>
+        `
+        
+        document.getElementById('all-history').appendChild(div);
+
     }
 });
 // Feni Flood
@@ -55,8 +72,21 @@ document.getElementById('feni-donate').addEventListener('click', function (e) {
         const feniNewTotalBalance = feniTotalBalance + feniDonateBalance;
         document.getElementById('feni-total-balance').innerHTML = feniNewTotalBalance;
         document.getElementById('total-balance').innerHTML = newTotalBalance;
-
         successfullPopUp.showModal();
+
+          // added Donation in Histroy
+          const date = new Date();
+          const cerrentDate = date.textContent = date.toString();
+  
+          const div = document.createElement('div');
+          div.classList.add('border', 'p-8','mt-6');
+          div.innerHTML =`
+              <p>${feniDonateBalance} Taka Donate for Flood Relief in Feni,Bangladesh</p>
+              <p>${cerrentDate}</p>
+          `
+          
+          document.getElementById('all-history').appendChild(div);
+  
     }
 });
 // Quota Movemen
@@ -76,11 +106,58 @@ document.getElementById('quota-donate').addEventListener('click', function (e) {
         const quotaNewTotalBalance = quotaTotalBalance + quotaDonateBalance;
         document.getElementById('quota-total-balance').innerHTML = quotaNewTotalBalance;
         document.getElementById('total-balance').innerHTML = newTotalBalance;
-
         successfullPopUp.showModal();
+
+          // added Donation in Histroy
+          const date = new Date();
+          const cerrentDate = date.textContent = date.toString();
+  
+          const div = document.createElement('div');
+          div.classList.add('border', 'p-8','mt-6');
+          div.innerHTML =`
+              <p>${quotaDonateBalance} Taka Aid for Injured in the Quota Movement</p>
+              <p>${cerrentDate}</p>
+          `
+          
+          document.getElementById('all-history').appendChild(div);
+  
     }
 });
 
 
 
+function showdonation(id){
+    document.getElementById('all-donation').classList.add('hidden');
+    document.getElementById('histroy-section').classList.add('hidden');
+    document.getElementById(id).classList.remove('hidden');
+
+}
+function addBg(id){
+    document.getElementById('show-donation').classList.add('bg-green-500');
+    document.getElementById('show-history').classList.add('bg-green-500');
+    document.getElementById(id).classList.remove('bg-green-500');
+}
+
+document.getElementById('show-donation').addEventListener('click', function(e){
+    
+    showdonation('all-donation');
+    addBg('show-history');
+    
+});
+document.getElementById('show-history').addEventListener('click', function(e){
+    
+    showdonation('histroy-section');
+    
+    addBg('show-donation');
+});
+
+// Toggle home page to blog page
+document.getElementById('blog').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = '/blog.html';    
+});
+document.getElementById('home').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = '/index.html';    
+});
 

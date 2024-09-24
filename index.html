@@ -19,7 +19,7 @@
             <div
                 class="flex flex-col items-center  space-y-3  lg:flex lg:flex-row lg:justify-between lg:items-center  px-10 py-3">
                 <div>
-                    <button class="btn btn-accent">Blog</button>
+                    <button id="blog" class="btn btn-accent">Blog</button>
                 </div>
                 <div class="flex gap-3 items-center ">
                     <div class="w-7">
@@ -38,12 +38,14 @@
             </div>
         </nav>
         <div class="flex justify-center gap-6  py-5 ">
-            <button class="btn">Donation</button>
-            <button class="btn">History</button>
+            <button id="show-donation"
+                class="border-2 border-solid border-zinc-400 py-3 px-5 rounded-xl">Donation</button>
+            <button id="show-history"
+                class="border-2 border-solid border-zinc-400 py-3 px-5 rounded-xl">History</button>
         </div>
     </header>
-    <main>
-        <div class="w-5/6 mx-auto mt-6">
+    <main class="w-5/6 mx-auto">
+        <div id="all-donation" class=" mt-6 ">
             <!-- Flood card -->
             <!-- Noakhali Flood -->
             <div class="lg:flex items-center p-5 border-2 mb-4 space-y-3 border-slate-300 rounded-2xl">
@@ -55,7 +57,8 @@
                             id="noakhali-total-balance">
                             100</span>BDT</button>
 
-                    <h2 class="text-2xl font-bold py-5">Donate for Flood at Noakhali, Bangladesh</h2>
+                    <h2 id="noakhali-flood-title" class="text-2xl font-bold py-5">Donate for Flood at Noakhali,
+                        Bangladesh</h2>
                     <p class="pb-5"> The recent floods in Noakhali have caused significant damage to homes
                         infrastructure. Your donation will help provide essential supplies and to those affected by this
                         disaster. Every contribution, big or small, makes difference. Please join us in supporting the
@@ -155,9 +158,13 @@
                 </div>
             </div>
         </div>
+        <!-- Histroy Part -->
+        <div id="histroy-section" class="hidden">
+            <div id="all-history"></div>
+        </div>
     </main>
-    <footer class="bg-zinc-400 py-16 mt-20">
-
+    <footer class="bg-zinc-400 py-16 mt-20 text-center">
+        <p>&copy; SOHAG TALUKDER</p>
     </footer>
     <script src="main.js"></script>
 </body>
