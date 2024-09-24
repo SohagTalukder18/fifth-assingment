@@ -1,8 +1,5 @@
 
 
-
-
-
 // Common Function
 function validInput(id) {
     const validDonateInput = document.getElementById(id).value;
@@ -156,20 +153,8 @@ document.getElementById('blog').addEventListener('click', function (e) {
     e.preventDefault();
     window.location.href = 'blog.html';
 });
-document.getElementById('home').addEventListener('click', function (e) {
-    e.preventDefault();
-    window.location.href = 'index.html';   
-   
-     
-});
 
-// function blog(event) {
-//     event.preventDefault();
-//     window.location.href = 'blog.html';    
-// };
 
-// function home(event) {
-//     event.preventDefault();
-//     window.location.href = 'index.html';    
-// };
+
+
 
